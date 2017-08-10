@@ -1,0 +1,14 @@
+[
+    {
+        "modelName": "candle",
+        "displayName": "Candle",
+        "particleScaleInfo": {"candle": 0.018 }
+    },
+    {
+        "modelName": "cup",
+        "displayName": "Cup",
+        "particleScaleInfo": { }
+    },
+ 
+]
+ 
