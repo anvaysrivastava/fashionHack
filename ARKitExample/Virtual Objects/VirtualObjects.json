@@ -1,8 +1,8 @@
 [
     {
         "modelName": "candle",
-        "displayName": "Candle",
-        "particleScaleInfo": {"candle": 0.018 }
+        "displayName": "Shoe",
+        "particleScaleInfo": {}
     },
     {
         "modelName": "cup",

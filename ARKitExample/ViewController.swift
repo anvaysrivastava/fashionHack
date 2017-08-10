@@ -52,7 +52,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var settingsButton: UIButton!
     @IBOutlet weak var addObjectButton: UIButton!
     @IBOutlet weak var restartExperienceButton: UIButton!
-    
+    @IBOutlet weak var scaleText1: UITextField!
+
     // MARK: - Queues
     
 	let serialQueue = DispatchQueue(label: "com.apple.arkitexample.serialSceneKitQueue")
@@ -65,6 +66,7 @@ class ViewController: UIViewController {
         Setting.registerDefaults()
 		setupUIControls()
         setupScene()
+
     }
 
 	override func viewDidAppear(_ animated: Bool) {
@@ -228,7 +230,8 @@ class ViewController: UIViewController {
 	// MARK: - Error handling
 	
     @IBAction func sliderValueChanged(_ sender: UISlider, forEvent event: UIEvent) {
-        sliderScaleValue =  sender.value
+        sliderScaleValue =  sender.value * 0.01776
+       scaleText1.text = String(sender.value)
     }
     func displayErrorMessage(title: String, message: String, allowRestart: Bool = false) {
 		// Blur the background.

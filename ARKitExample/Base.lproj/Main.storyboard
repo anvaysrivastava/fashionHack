@@ -118,7 +118,7 @@
                                 </constraints>
                                 <blurEffect style="light"/>
                             </visualEffectView>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.29999999999999999" maxValue="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="dnW-l0-BmS">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="28" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="dnW-l0-BmS">
                                 <rect key="frame" x="15" y="80" width="346" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
@@ -126,6 +126,16 @@
                                     <action selector="sliderValueChanged:forEvent:" destination="BV1-FR-VrT" eventType="valueChanged" id="ZY1-yD-rkh"/>
                                 </connections>
                             </slider>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.5" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4LF-lx-MD3">
+                                <rect key="frame" x="139" y="110" width="65" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -152,6 +162,7 @@
                         <outlet property="messageLabel" destination="Mqz-65-rAs" id="G3a-qn-5g9"/>
                         <outlet property="messagePanel" destination="9e0-zv-RiN" id="pKf-hp-Dvx"/>
                         <outlet property="restartExperienceButton" destination="BgI-fb-Vqi" id="Yfh-W4-qlO"/>
+                        <outlet property="scaleText1" destination="4LF-lx-MD3" id="h7Y-S7-alt"/>
                         <outlet property="sceneView" destination="E6c-py-dvH" id="Gr4-Uw-Z4A"/>
                         <outlet property="settingsButton" destination="j8v-6q-UBb" id="wZV-ib-D05"/>
                         <segue destination="mYv-Qg-jWH" kind="popoverPresentation" identifier="showObjects" popoverAnchorView="xcf-ic-uGo" id="WP3-Hd-cnB">
