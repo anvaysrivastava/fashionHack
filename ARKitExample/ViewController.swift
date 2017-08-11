@@ -59,7 +59,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var scaleText1: UITextField!
     var selectedBrand:String!
     var ukSize:Int = 8
-    var cms:Float = 27
+    var cms:Float = 27 * 0.01776
 
     // MARK: - Queues
     
