@@ -9,7 +9,7 @@ import ARKit
 import SceneKit
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     // MARK: - ARKit Config Properties
     
@@ -46,6 +46,9 @@ class ViewController: UIViewController {
     
     var spinner: UIActivityIndicatorView?
     
+    @IBOutlet weak var pickerView: UIPickerView!
+    var brands = ["Reebok","Puma"]
+    
     @IBOutlet var sceneView: ARSCNView!
     @IBOutlet weak var messagePanel: UIView!
     @IBOutlet weak var messageLabel: UILabel!
@@ -53,6 +56,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var addObjectButton: UIButton!
     @IBOutlet weak var restartExperienceButton: UIButton!
     @IBOutlet weak var scaleText1: UITextField!
+    var selectedBrand:String!
+    var ukSize:Int = 8
+    var cms:Float = 27
 
     // MARK: - Queues
     
@@ -62,7 +68,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        pickerView.delegate = self
+        pickerView.dataSource = self
         Setting.registerDefaults()
 		setupUIControls()
         setupScene()
@@ -229,14 +236,17 @@ class ViewController: UIViewController {
     
 	// MARK: - Error handling
 	
-    @IBAction func sliderValueChanged(_ sender: UISlider, forEvent event: UIEvent) {
-        sliderScaleValue =  sender.value * 0.01776
-        scaleText1.text = String(sender.value)
-    }
     
     @IBAction func stepperValueChanged(_ sender: UIStepper, forEvent event: UIEvent) {
-        sliderScaleValue =  Float(sender.value * 0.01776)
+        ukSize = Int(sender.value)
         scaleText1.text = String(sender.value)
+        updateSize()
+    }
+    
+    func updateSize(){
+        var sizeMap: [String : Float] = ["6":25,"7":26,"8":27,"9":28,"10":29,"11":30]
+        cms = sizeMap[String(ukSize)]! * 0.01776
+        
     }
     func displayErrorMessage(title: String, message: String, allowRestart: Bool = false) {
 		// Blur the background.
@@ -254,4 +264,20 @@ class ViewController: UIViewController {
 		}
 	}
     
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return brands.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return brands[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedBrand = brands[row]
+        updateSize()
+    }
 }

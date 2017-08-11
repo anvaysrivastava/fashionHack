@@ -52,7 +52,7 @@ extension ViewController: VirtualObjectSelectionViewControllerDelegate, VirtualO
         let object = VirtualObject(definition: definition)
         let position = focusSquare?.lastPosition ?? float3(0)
         
-        virtualObjectManager.loadVirtualObject(object, to: position, cameraTransform: cameraTransform, scaleValue:  sliderScaleValue )
+        virtualObjectManager.loadVirtualObject(object, to: position, cameraTransform: cameraTransform, scaleValue:  cms )
         if object.parent == nil {
             serialQueue.async {
                 self.sceneView.scene.rootNode.addChildNode(object)
