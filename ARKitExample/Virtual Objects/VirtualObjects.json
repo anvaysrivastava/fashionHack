@@ -1,14 +1,19 @@
 [
     {
-        "modelName": "candle",
-        "displayName": "Shoe",
+        "modelName": "shoe",
+        "displayName": "Women Shoe",
         "particleScaleInfo": {}
     },
     {
-        "modelName": "cup",
-        "displayName": "Cup",
+        "modelName": "chair",
+        "displayName": "Chair",
         "particleScaleInfo": { }
     },
+ {
+ "modelName": "lamp",
+ "displayName": "Lamp",
+ "particleScaleInfo": { }
+ },
  
 ]
  

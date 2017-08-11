@@ -231,7 +231,12 @@ class ViewController: UIViewController {
 	
     @IBAction func sliderValueChanged(_ sender: UISlider, forEvent event: UIEvent) {
         sliderScaleValue =  sender.value * 0.01776
-       scaleText1.text = String(sender.value)
+        scaleText1.text = String(sender.value)
+    }
+    
+    @IBAction func stepperValueChanged(_ sender: UIStepper, forEvent event: UIEvent) {
+        sliderScaleValue =  Float(sender.value * 0.01776)
+        scaleText1.text = String(sender.value)
     }
     func displayErrorMessage(title: String, message: String, allowRestart: Bool = false) {
 		// Blur the background.

@@ -118,16 +118,16 @@
                                 </constraints>
                                 <blurEffect style="light"/>
                             </visualEffectView>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="28" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="dnW-l0-BmS">
-                                <rect key="frame" x="15" y="80" width="346" height="30"/>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="20" minimumValue="15" maximumValue="35" translatesAutoresizingMaskIntoConstraints="NO" id="Y6v-Tv-kbM">
+                                <rect key="frame" x="16" y="96" width="94" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <action selector="sliderChanged:" destination="BV1-FR-VrT" eventType="editingChanged" id="UKX-Go-lgv"/>
-                                    <action selector="sliderValueChanged:forEvent:" destination="BV1-FR-VrT" eventType="valueChanged" id="ZY1-yD-rkh"/>
+                                    <action selector="stepperValueChanged:forEvent:" destination="BV1-FR-VrT" eventType="touchUpInside" id="JZf-Kh-hrj"/>
                                 </connections>
-                            </slider>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.5" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4LF-lx-MD3">
-                                <rect key="frame" x="139" y="110" width="65" height="30"/>
+                            </stepper>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="20" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4LF-lx-MD3">
+                                <rect key="frame" x="155" y="95" width="65" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" notEnabled="YES"/>

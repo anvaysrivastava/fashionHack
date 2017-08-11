@@ -57,8 +57,7 @@ extension ViewController: UIPopoverPresentationControllerDelegate {
         }
     }
     
-     @IBAction func sliderChanged(_ sender: Any) {
-        self.setupFocusSquare()
+     @IBAction func sliderChanger(_ sender: Any) {
     }
     
     // MARK: - UIPopoverPresentationControllerDelegate
