@@ -75,6 +75,7 @@ class VirtualObjectManager {
 		object.scale.x = scalex
         object.scale.y = scaley
         object.scale.z = scalez
+        object.opacity = 0.7
         self.virtualObjects.append(object)
 		self.delegate?.virtualObjectManager(self, willLoad: object)
 		
