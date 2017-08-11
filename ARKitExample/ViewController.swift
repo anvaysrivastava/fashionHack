@@ -247,8 +247,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     func updateSize(){
         var sizeMap: [String : Float] = ["6":25,"7":26,"8":27,"9":28,"10":29,"11":30]
-        cms = sizeMap[String(ukSize)]! * 0.01776
-        cmsSizeLabel.text = String(sizeMap[String(ukSize)]!)
+        let footCms = sizeMap[String(ukSize)]!
+        let shoeCms = footCms + 3.0
+        cms = shoeCms * 0.01776
+        cmsSizeLabel.text = String(shoeCms)
         
     }
     func displayErrorMessage(title: String, message: String, allowRestart: Bool = false) {
