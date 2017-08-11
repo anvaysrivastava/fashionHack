@@ -14,7 +14,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     // MARK: - ARKit Config Properties
     
     var screenCenter: CGPoint?
-    var sliderScaleValue:Float = 0.5
+   var sliderScaleValue:Float = 0.3552
+
     let session = ARSession()
     let standardConfiguration: ARWorldTrackingConfiguration = {
         let configuration = ARWorldTrackingConfiguration()
