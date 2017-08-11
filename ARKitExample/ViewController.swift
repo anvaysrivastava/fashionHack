@@ -48,6 +48,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var spinner: UIActivityIndicatorView?
     
     @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet weak var cmsSizeLabel: UILabel!
     var brands = ["Reebok","Puma"]
     
     @IBOutlet var sceneView: ARSCNView!
@@ -240,13 +241,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     @IBAction func stepperValueChanged(_ sender: UIStepper, forEvent event: UIEvent) {
         ukSize = Int(sender.value)
-        scaleText1.text = String(sender.value)
+        scaleText1.text = String(Int(sender.value))
         updateSize()
     }
     
     func updateSize(){
         var sizeMap: [String : Float] = ["6":25,"7":26,"8":27,"9":28,"10":29,"11":30]
         cms = sizeMap[String(ukSize)]! * 0.01776
+        cmsSizeLabel.text = String(sizeMap[String(ukSize)]!)
         
     }
     func displayErrorMessage(title: String, message: String, allowRestart: Bool = false) {
