@@ -71,10 +71,10 @@ class VirtualObjectManager {
 	
 	// MARK: - Loading object
 	
-    func loadVirtualObject(_ object: VirtualObject, to position: float3, cameraTransform: matrix_float4x4, scaleValue : Float) {
-		object.scale.x = scaleValue
-        object.scale.y = scaleValue
-        object.scale.z = scaleValue
+    func loadVirtualObject(_ object: VirtualObject, to position: float3, cameraTransform: matrix_float4x4, scalex : Float,scaley : Float,scalez : Float) {
+		object.scale.x = scalex
+        object.scale.y = scaley
+        object.scale.z = scalez
         self.virtualObjects.append(object)
 		self.delegate?.virtualObjectManager(self, willLoad: object)
 		

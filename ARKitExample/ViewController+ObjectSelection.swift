@@ -52,7 +52,28 @@ extension ViewController: VirtualObjectSelectionViewControllerDelegate, VirtualO
         let object = VirtualObject(definition: definition)
         let position = focusSquare?.lastPosition ?? float3(0)
         
-        virtualObjectManager.loadVirtualObject(object, to: position, cameraTransform: cameraTransform, scaleValue:  cms )
+        var scalex = cms
+        var scaley = cms
+        var scalez = cms
+        
+        if index == 0 {
+            scalex = cms*0.01776
+            scaley = cms*0.01776
+            scalez = cms*0.01776
+        }
+        
+        if index == 1 {
+            scalex = cms*0.02
+            scaley = cms*0.02
+            scalez = cms*0.02
+            NSLog("Inside men shoes")
+        }
+        
+        if selectedBrand == "Reebok" {
+            scalez = scalez*1.2
+        }
+        
+        virtualObjectManager.loadVirtualObject(object, to: position, cameraTransform: cameraTransform, scalex:scalex, scaley: scaley, scalez: scalez )
         if object.parent == nil {
             serialQueue.async {
                 self.sceneView.scene.rootNode.addChildNode(object)

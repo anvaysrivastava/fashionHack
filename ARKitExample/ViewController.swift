@@ -58,7 +58,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var addObjectButton: UIButton!
     @IBOutlet weak var restartExperienceButton: UIButton!
     @IBOutlet weak var scaleText1: UITextField!
-    var selectedBrand:String!
+    var selectedBrand:String = "Reebok"
     var ukSize:Int = 8
     var cms:Float = 27 * 0.01776
 
@@ -246,10 +246,13 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     func updateSize(){
-        var sizeMap: [String : Float] = ["6":25,"7":26,"8":27,"9":28,"10":29,"11":30]
+        var sizeMap: [String : Float] = ["3":22,"4":23,"5":24,"6":25,"7":26,"8":27,"9":28,"10":29,"11":30]
         let footCms = sizeMap[String(ukSize)]!
-        let shoeCms = footCms + 3.0
-        cms = shoeCms * 0.01776
+        let shoeCms = footCms
+        
+        cms = shoeCms
+        
+        //        cms = shoeCms * 0.01776
         cmsSizeLabel.text = String(shoeCms)
         
     }
