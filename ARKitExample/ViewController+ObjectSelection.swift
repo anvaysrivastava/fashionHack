@@ -60,13 +60,14 @@ extension ViewController: VirtualObjectSelectionViewControllerDelegate, VirtualO
             scalex = cms*0.01776
             scaley = cms*0.01776
             scalez = cms*0.01776
-        }
-        
-        if index == 1 {
+        } else if index == 1 {
             scalex = (cms+3)*0.0198
             scaley = (cms+3)*0.0198
             scalez = (cms+3)*0.0198
-            NSLog("Inside men shoes")
+        } else {
+            scalex = 1
+            scaley = 1
+            scalez = 1
         }
         
         if selectedBrand == "Reebok" {
