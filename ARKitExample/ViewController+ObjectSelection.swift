@@ -63,9 +63,9 @@ extension ViewController: VirtualObjectSelectionViewControllerDelegate, VirtualO
         }
         
         if index == 1 {
-            scalex = cms*0.02
-            scaley = cms*0.02
-            scalez = cms*0.02
+            scalex = (cms+3)*0.0198
+            scaley = (cms+3)*0.0198
+            scalez = (cms+3)*0.0198
             NSLog("Inside men shoes")
         }
         
